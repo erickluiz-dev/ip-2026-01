@@ -2,14 +2,19 @@ package main
 
 import(
 	f "fmt"
-	"database/sql"
 	"net/http"
+	"html/template"
 
 )
 
-var db *sql.DB
+func FormAccountHandler(w http.ResponseWriter, r *http.Request) {
 
-func creatAccountHandler(w http.ResponseWriter, r http.Request) {
+	tmpl, err := template.ParseFiles("/frontend/criar-conta-usuario.html")
+	if err != nil {
+		http.Error(w, "Erro ao abrir página: "+err.Error(), http.StatusInternalServerError)
+		return
+	}
+	tmpl.Execute(w, nil)
 
 	if r.Method != http.MethodPost {
 		http.Error(w, "Método não permitido", http.StatusMethodNotAllowed)
@@ -23,7 +28,7 @@ func creatAccountHandler(w http.ResponseWriter, r http.Request) {
 
 	query := "INSERT INTO usuarios (email, senha, nome, cpf) VALUES ($1, $2, $3, $4)"
 
-	_, err := db.Exec(query, email, senha, nome, cpf)
+	_, err = db.Exec(query, email, senha, nome, cpf)
 	if err != nil{
 		http.Error(w, "Erro ao salvar no Banco de Dados"+err.Error(), http.StatusInternalServerError)
 		return
