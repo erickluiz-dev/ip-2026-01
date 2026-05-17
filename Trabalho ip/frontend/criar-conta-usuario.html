@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <header>
+            <h1>Criar Conta</h1>
+            <p>Autenticação hospital</p>
+        </header>
+
+        <main>
+            <!--Cria a conta-->
+            <section>
+                <form action="/FormAccountHandler" method="POST">
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" placeholder="Informe seu email">
+                    <br><br>
+                    <label for="senha"></label>
+                    <input type="password" id="senha" name="senha" placeholder="Informe sua senha">
+                    <br><br> 
+                    <label for="nome"></label>
+                    <input type="text" id="nome" name="nome" placeholder="Informe seu nome">
+                    <br><br>
+                    <label for="cpf"></label>
+                    <input type="number" id="cpf" name="cpf" placeholder="Informe seu CPF">
+                    <br><br>
+
+                    <button type="submit">Finalizar Cadastro</button>
+                    <br><br>
+                </form>
+            </section>
+            <!--Para os médicos criarem a sua conta-->
+            <section>
+               <div>
+                    <nav>
+                        <li><a href="/frontend/criar-conta-medico.html">Criar Conta Médica</a></li>
+                        <br>    
+                    </nav>
+               </div>           
+            </section>
+        </main>
+
+        <footer>
+            Trabalho Introdução à Progamação
+        </footer>
+    </body>
+</html>
