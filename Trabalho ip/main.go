@@ -50,6 +50,8 @@ func main() {
 	http.HandleFunc("/FormAccount", FormAccountHandler)
 	http.HandleFunc("/FormMedical", FormMedicalHandler)
 	http.HandleFunc("/", IndexHandler)
+	http.HandleFunc("/Login", LoginHandler)
+	http.HandleFunc("/Dashboard", DashboardHandler)
 
 	porta := ":5500"
 	url := "http://localhost" + porta

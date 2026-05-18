@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital ES - Área do Paciente</title>
+</head>
+<body>
+    <header>
+        <h1>Página do Paciente</h1>
+        <p>Painel de gerenciamento de consultas e perfil.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Marcar consultas</h2>
+            <form action="/AgendarConsulta" method="POST">
+                <label for="medico">Médico:</label><br>
+                <select name="medico" id="medico">
+                    <option value="Marcos">Marcos</option>
+                    <option value="Marcelo">Marcelo</option>
+                </select>
+                <br><br>
+
+                <label for="atuacao">Atuação:</label><br>
+                <select name="atuacao" id="atuacao">
+                    <option value="Cardiologista">Cardiologista</option>
+                    <option value="Dermatologista">Dermatologista</option>
+                </select>
+                <br><br>      
+
+                <label for="data">Data:</label><br>
+                <input type="date" id="data" name="data" required><br><br>
+
+                <button type="submit">Finalizar Agendamento</button><br><br>
+            </form>
+        </section>
+
+        <section>
+            <h2>Consultas marcadas</h2>
+            <p>Nenhum agendamento ativo no momento.</p>
+        </section>
+
+        <section>
+            <h3>Gerenciar Perfil</h3>
+            <nav>
+                <ul>
+                    <li><a href="/AtualizarConta">Atualizar conta</a></li>
+                    <li><a href="/DeletarConta">Deletar conta</a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <footer>
+        <p>Trabalho Introdução à Programação</p>
+    </footer>
+</body>
+</html>
