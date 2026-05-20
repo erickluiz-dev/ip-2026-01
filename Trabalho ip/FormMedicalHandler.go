@@ -25,11 +25,11 @@ func FormMedicalHandler(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")
 		senha := r.FormValue("senha")
 		cpf := r.FormValue("cpf")
-		atuacao := r.FormValue("atuacao")
+		funcao := r.FormValue("funcao")
 
-		query := "INSERT INTO medico (nome, email, senha, cpf, funcao) VALUES ($1, $2, $3, $4, $5)"
+		query := "INSERT INTO medicos (nome, email, senha, cpf, funcao) VALUES ($1, $2, $3, $4, $5)"
 
-		_, err := db.Exec(query, nome, email, senha, cpf, atuacao)
+		_, err := db.Exec(query, nome, email, senha, cpf, funcao)
 		if err != nil {
 			http.Error(w, "Erro ao salvar no banco de dados: "+err.Error(), http.StatusInternalServerError)
 			return
